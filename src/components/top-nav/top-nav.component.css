@@ -1,0 +1,46 @@
+.main-container {
+  padding: 20px 0px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 45px;
+}
+.left .item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.right .item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item p svg {
+  color: #0654f1;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+.right .social-icons p svg {
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  background-color: #0654f1;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.item p {
+  font-weight: 600;
+  font-size: 14px;
+}

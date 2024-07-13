@@ -1,0 +1,19 @@
+.main-container {
+  padding: 15px 0px;
+  height: 50vh;
+}
+.search-container {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.search-input {
+  border-radius: 5px;
+  margin-right: 10px;
+}

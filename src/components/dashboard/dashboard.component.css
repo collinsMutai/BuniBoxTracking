@@ -1,0 +1,33 @@
+
+.main-container {
+  padding: 20px 0px;
+}
+.search-container {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.search-input {
+  border-radius: 5px;
+  margin-right: 10px;
+}
+th,
+td {
+  text-transform: capitalize;
+}
+th {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+td {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+}

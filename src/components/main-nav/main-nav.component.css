@@ -1,0 +1,15 @@
+.main-container {
+  padding: 20px 0px;
+}
+.nav-item a, .logo a {
+  color: #000;
+}
+.nav-item {
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  color: #000;
+}
+.nav-item.active .nav-link {
+  color: #007bff;
+  font-weight: bold;
+}
