@@ -2,78 +2,54 @@
   <div class="row">
     <div class="col">
       <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand logo" href="#">BuniBox</a>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand logo" href="#">BuniBox</a>
 
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbarTogglerDemo03"
-          >
-            <ul class="navbar-nav mt-2 mt-lg-0">
-              <li class="nav-item" [ngClass]="{ active: activeLink === '/' }">
-                <a class="nav-link" routerLink="/" (click)="setActiveLink('/')"
-                  >Home</a
-                >
-              </li>
-              <li
-                class="nav-item"
-                [ngClass]="{ active: activeLink === '/dashboard' }"
-              >
-                <a
-                  class="nav-link"
-                  routerLink="dashboard"
-                  (click)="setActiveLink('/dashboard')"
-                  >Dashboard</a
-                >
-              </li>
-              <li
-                class="nav-item"
-                [ngClass]="{ active: activeLink === '/cctv' }"
-              >
-                <a
-                  class="nav-link"
-                  routerLink="cctv"
-                  (click)="setActiveLink('/cctv')"
-                  >CCTV</a
-                >
-              </li>
-              <li
-                class="nav-item"
-                [ngClass]="{ active: activeLink === '/location' }"
-              >
-                <a
-                  class="nav-link"
-                  routerLink="location"
-                  (click)="setActiveLink('/location')"
-                  >Location</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="form-inline my-2 my-lg-0">
-            <ul class="navbar-nav mt-2 mt-lg-0">
-              <button
-                type="button"
-                class="nav-item btn btn-primary"
-                style="color: #fff"
-              >
-                Contact
-              </button>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item" [ngClass]="{ active: activeLink === '/' }">
+          <a class="nav-link me-3" routerLink="/" (click)="setActiveLink('/')">Home</a>
+        </li>
+        <li class="nav-item" [ngClass]="{ active: activeLink === '/dashboard' }">
+          <a class="nav-link me-3" routerLink="dashboard" (click)="setActiveLink('/dashboard')">Dashboard</a>
+        </li>
+        <li class="nav-item" [ngClass]="{ active: activeLink === '/cctv' }">
+          <a class="nav-link me-3" routerLink="cctv" (click)="setActiveLink('/cctv')">CCTV</a>
+        </li>
+        <li class="nav-item" [ngClass]="{ active: activeLink === '/location' }">
+          <a class="nav-link me-3" routerLink="location" (click)="setActiveLink('/location')">Location</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-inline my-2 my-lg-0">
+      <button
+        type="button"
+        class="btn"
+        style="
+          color: #fff;
+          background-color: #fda403;
+          padding: 8px 10px;
+          border: none;
+        "
+      >
+        Contact
+      </button>
+    </div>
+  </div>
+</nav>
+
     </div>
   </div>
 </div>

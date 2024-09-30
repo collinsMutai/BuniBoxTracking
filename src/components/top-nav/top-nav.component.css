@@ -1,5 +1,7 @@
 .main-container {
-  padding: 20px 0px;
+  padding: 10px 20px 10px 20px;
+  background-color: #45474B;
+  color: #fff;
 }
 
 .left {
@@ -26,21 +28,19 @@
 }
 
 .item p svg {
-  color: #0654f1;
-  height: 25px;
-  width: 25px;
+  color: #FDA403;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
 }
 .right .social-icons p svg {
-  color: #fff;
-  height: 45px;
-  width: 45px;
-  background-color: #0654f1;
-  padding: 10px;
+  color: #FDA403;
+  height: 20px;
+  width: 20px;
   border-radius: 5px;
   cursor: pointer;
 }
 .item p {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
 }

@@ -1,19 +1,20 @@
 .main-container {
-  padding: 15px 0px;
+  padding: 20px 0px;
   height: 50vh;
 }
-.search-container {
-  padding-bottom: 15px;
-  display: flex;
-  align-items: center;
+.search label {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
-.searchForm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.search input::placeholder {
+  color: #a9a9a9;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
-.search-input {
-  border-radius: 5px;
-  margin-right: 10px;
+.search button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }

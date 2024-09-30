@@ -1,19 +1,27 @@
 <div class="container main-container">
-    <div class="row search-container">
-    <form
-      class="form-inline searchForm"
-      style="display: flex; align-items: center"
+  <div class="mb-5 d-flex align-items-center justify-content-center search">
+    <label for="exampleFormControlInput1" class="form-label me-2"
+      >Search Bus</label
     >
-      <div class="form-group mx-sm-3 mb-2">
-        <input
-          type="text"
-          class="form-control"
-          id="bus-number"
-          placeholder="Search Bus No."
-        />
-      </div>
-      <button type="submit" class="btn btn-primary mb-2">Search</button>
-    </form>
+    <input
+      type="text"
+      class="form-control me-2"
+      id="exampleFormControlInput1"
+      placeholder="Search for a bus"
+      style="max-width: 300px"
+    />
+    <button
+      type="button"
+      class="btn"
+      style="
+        color: #fff;
+        background-color: #fda403;
+        padding: 8px 10px;
+        border: none;
+      "
+    >
+      Search
+    </button>
   </div>
-  <div class="row" id="map" style="height: 500px"></div>
+  <div class="row" id="map" style="height: 350px"></div>
 </div>

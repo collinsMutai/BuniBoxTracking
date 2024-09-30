@@ -1,48 +1,360 @@
 <div class="container main-container">
-  <div class="row search-container">
-    <form
-      class="form-inline searchForm"
-      style="display: flex; align-items: center"
-    >
-      <div class="form-group mx-sm-3 mb-2">
-        <input
-          type="text"
-          class="form-control"
-          id="bus-number"
-          placeholder="Search Bus No."
-        />
-      </div>
-      <button type="submit" class="btn btn-primary mb-2">Search</button>
-    </form>
-  </div>
   <div class="row">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th class="table-heading" scope="col">seat number</th>
-          <th scope="col">seats status</th>
-          <th scope="col">door status</th>
-          <th scope="col">location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>occupied</td>
-          <td>open</td>
-          <td>Imenti</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>occupied</td>
-          <td>closed</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>empty</td>
-          <td>open</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mb-4 d-flex align-items-center justify-content-center search">
+      <label for="exampleFormControlInput1" class="form-label me-2"
+        >Search Bus</label
+      >
+      <input
+        type="text"
+        class="form-control me-2"
+        id="exampleFormControlInput1"
+        placeholder="Search for a bus"
+        style="max-width: 300px"
+      />
+      <button
+        type="button"
+        class="btn"
+        style="
+          color: #fff;
+          background-color: #fda403;
+          padding: 8px 10px;
+          border: none;
+        "
+      >
+        Search
+      </button>
+    </div>
+    <div class="status">
+      <p>
+        <svg
+          style="color: green"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+          /></svg
+        >Empty
+      </p>
+      <p>
+        <svg
+          style="color: red"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+          /></svg
+        >Occupied
+      </p>
+      <p>
+        <svg
+          style="color: #fda403"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+          /></svg
+        >Booked
+      </p>
+      <p>
+        <svg
+          style="color: #45474b"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+          /></svg
+        >Not Booked
+      </p>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2" style="justify-content: flex-start">
+              <img src="../../assets/driver.png" alt="" />
+            </div>
+            <div class="col-10">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-end; flex-wrap: nowrap"
+              >
+                <div class="seats" *ngFor="let seat of top">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-end"
+              >
+                <div class="seats" *ngFor="let seat of top2">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-end"
+              >
+                <div class="seats" *ngFor="let seat of mid">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-start"
+              >
+                <div class="seats" *ngFor="let seat of bottomleft">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-8">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-end; flex-wrap: nowrap"
+              >
+                <div class="seats" *ngFor="let seat of bottom">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-4"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-start"
+              >
+                <div class="seats" *ngFor="let seat of bottom2left">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+              <p class="door">
+                Door: <br />
+                {{ door }}
+              </p>
+            </div>
+            <div class="col-8">
+              <div
+                class="top mobileSeatLayout"
+                style="justify-content: flex-end; flex-wrap: nowrap"
+              >
+                <div class="seats" *ngFor="let seat of bottom2">
+                  <button
+                    type="button"
+                    class="btn btn-default btn-secondary mb-2"
+                    tooltip="{{
+                      'Seat ' +
+                        seat.seat +
+                        '. ' +
+                        'Status ' +
+                        seat.status +
+                        '. ' +
+                        'Booked: ' +
+                        seat.booked +
+                        '. '
+                    }}"
+                    placement="top"
+                    [ngStyle]="{
+                      'border-color': seat.status === 'empty' ? 'green' : 'red'
+                    }"
+                  >
+                    <p>
+                      {{ seat.seat }}
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body left">
+          <p>Speed: 80KM/HR</p>
+          <p><a routerLink="/location">Location</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

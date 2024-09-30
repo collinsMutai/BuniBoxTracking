@@ -1,28 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from 'src/components/home/home.component';
+import { RouterModule } from '@angular/router';
+
 import { TopNavComponent } from 'src/components/top-nav/top-nav.component';
 import { MainNavComponent } from 'src/components/main-nav/main-nav.component';
 import { LoginComponent } from 'src/components/login/login.component';
-import { RouterModule } from '@angular/router';
 import { CctvComponent } from 'src/components/cctv/cctv.component';
-
 import { LocationComponent } from 'src/components/location/location.component';
+import { SeatsComponent } from 'src/components/seats/seats.component';
+import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
+import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     TopNavComponent,
     MainNavComponent,
     LoginComponent,
     CctvComponent,
-   LocationComponent
+    LocationComponent,
+    SeatsComponent,
+    DashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    CommonModule,
+    TooltipModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
