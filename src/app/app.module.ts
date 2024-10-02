@@ -13,6 +13,9 @@ import { DashboardComponent } from 'src/components/dashboard/dashboard.component
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FooterComponent } from 'src/components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     LocationComponent,
     SeatsComponent,
     DashboardComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     RouterModule,
     CommonModule,
     TooltipModule.forRoot(),
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

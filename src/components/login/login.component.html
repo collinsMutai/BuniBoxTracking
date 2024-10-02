@@ -11,8 +11,8 @@
     </div>
     <div class="col-6 right">
       <div class="form-container">
-        <h3>Login</h3>
-        <form class="form-inline authForm">
+        <h3>{{ isSignup ? 'Sign Up' : 'Login' }}</h3>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="form-inline authForm">
           <div class="form-group mb-2 w-100">
             <label for="email" class="sr-only">Email</label>
             <input
@@ -20,7 +20,12 @@
               class="form-control w-100"
               id="email"
               placeholder="Email"
+              formControlName="email"
             />
+            <div *ngIf="authForm.get('email')!.invalid && authForm.get('email')!.touched" class="error">
+              <small *ngIf="authForm.get('email')!.errors?.required">Email is required.</small>
+              <small *ngIf="authForm.get('email')!.errors?.email">Invalid email format.</small>
+            </div>
           </div>
           <div class="form-group mb-2 w-100">
             <label for="password" class="sr-only">Password</label>
@@ -29,10 +34,32 @@
               class="form-control w-100"
               id="password"
               placeholder="Password"
+              formControlName="password"
+            />
+            <div *ngIf="authForm.get('password')!.invalid && authForm.get('password')!.touched" class="error">
+              <small *ngIf="authForm.get('password')!.errors?.required">Password is required.</small>
+            </div>
+          </div>
+          <div *ngIf="isSignup" class="form-group mb-2 w-100">
+            <label for="confirmPassword" class="sr-only">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control w-100"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              formControlName="confirmPassword"
             />
           </div>
-          <button type="submit" class="authBtn">Login</button>
+          <button type="submit" class="authBtn" [disabled]="authForm.invalid">{{ isSignup ? 'Sign Up' : 'Login' }}</button>
         </form>
+        <p class="toggle-btn">
+          <span>
+            {{ isSignup ? 'Already have an account? ' : 'Don\'t have an account? ' }}
+            <a href="#" (click)="toggleForm(); $event.preventDefault();">
+              {{ isSignup ? 'Login' : 'Create an account' }}
+            </a>
+          </span>
+        </p>
       </div>
     </div>
   </div>

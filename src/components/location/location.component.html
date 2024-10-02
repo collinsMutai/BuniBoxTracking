@@ -1,8 +1,6 @@
 <div class="container main-container">
   <div class="mb-5 d-flex align-items-center justify-content-center search">
-    <label for="exampleFormControlInput1" class="form-label me-2"
-      >Search Bus</label
-    >
+    <label for="exampleFormControlInput1" class="form-label me-2">Search Bus</label>
     <input
       type="text"
       class="form-control me-2"
@@ -13,15 +11,11 @@
     <button
       type="button"
       class="btn"
-      style="
-        color: #fff;
-        background-color: #fda403;
-        padding: 8px 10px;
-        border: none;
-      "
+      style="color: #fff; background-color: #fda403; padding: 8px 10px; border: none;"
+      (click)="onSearch()"
     >
       Search
     </button>
   </div>
-  <div class="row" id="map" style="height: 350px"></div>
+  <div class="row" id="map" style="height: 350px;"></div>
 </div>

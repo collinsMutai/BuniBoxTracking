@@ -4,7 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 90vh;
+  height: 100vh;
 }
 
 .main-container::before {
@@ -81,4 +81,57 @@ form {
   margin-top: 15px;
   border: none;
   outline: none;
+}
+
+@media (max-width: 768px) {
+  .right {
+    padding: 20px; /* Adjust padding for mobile */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Add some margin for spacing */
+  }
+
+  .form-container {
+    width: 100%; /* Full width for the form container */
+    padding: 15px; /* Adjust padding for mobile */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  form {
+    width: 100%; /* Full width for the form */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .authBtn {
+    padding: 12px; /* Adjust button padding */
+  }
+
+  .toggle-btn {
+    margin-top: 15px; /* Add margin for spacing */
+  }
+  .left h1 {
+    font-size: 40px;
+    color: #fff;
+  }
+  .right h3 {
+    font-size: 24px; /* Reduce font size for heading */
+  }
+
+  .error {
+    font-size: 12px; /* Adjust error message font size */
+  }
+}
+
+@media (max-width: 425px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .main-container {
+    height: auto;
+  }
+  .right,
+  .left {
+    width: 100%;
+  }
 }

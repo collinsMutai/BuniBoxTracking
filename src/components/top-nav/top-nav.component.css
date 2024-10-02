@@ -44,3 +44,35 @@
   font-weight: 500;
   font-size: 14px;
 }
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .left, .right {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    gap: 20px; /* Reduce gap between items */
+  }
+
+  .left {
+    margin-bottom: 20px; /* Add space between left and right sections */
+  }
+
+  .right {
+    justify-content: flex-start; /* Align right section to start */
+  }
+
+  .item {
+    width: 100%; /* Make items take full width */
+  }
+
+  .item p {
+    font-size: 12px; /* Reduce font size for better readability on mobile */
+  }
+
+  .item p svg {
+    height: 18px; /* Adjust icon size */
+    width: 18px;
+  }
+}
