@@ -62,3 +62,43 @@
 .card-body {
   text-align: center;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .search {
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .search input {
+    width: 40%; 
+    max-width: 200px; 
+    margin-right: 5px; 
+  }
+
+  .search button {
+    padding: 8px 5px; 
+  }
+
+  .left, .right {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 20px; 
+  }
+
+  .main-camera .card-img-top {
+    height: 200px; 
+  }
+
+  .cameras-card .card-img-top {
+    height: 120px; 
+  }
+}
