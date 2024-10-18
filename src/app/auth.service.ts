@@ -1,7 +1,6 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AuthResponse } from './auth.model'; // Adjust the path as necessary
+import { AuthResponse } from './auth.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +10,6 @@ export class AuthService {
   public token$: Observable<string | null> = this.tokenSubject.asObservable();
 
   constructor() {
-    // Optionally load the token from local storage
     const token = localStorage.getItem('token');
     this.tokenSubject.next(token);
   }
@@ -22,17 +20,16 @@ export class AuthService {
 
   logout(): void {
     this.tokenSubject.next(null);
-    localStorage.removeItem('token'); // Clear localStorage
+    localStorage.removeItem('token');
   }
 
   setToken(token: string): void {
     this.tokenSubject.next(token);
-    localStorage.setItem('token', token); // Store token in localStorage
+    localStorage.setItem('token', token);
   }
 
   signIn(email: string, password: string): Observable<AuthResponse> {
-    // Replace this with your actual sign-in logic (API call)
-    const mockResponse: AuthResponse = { token: 'fake-jwt-token' }; // Mock response
+    const mockResponse: AuthResponse = { token: 'fake-jwt-token' };
     return new Observable((observer) => {
       observer.next(mockResponse);
       observer.complete();
@@ -40,8 +37,7 @@ export class AuthService {
   }
 
   signUp(email: string, password: string): Observable<AuthResponse> {
-    // Replace this with your actual sign-up logic (API call)
-    const mockResponse: AuthResponse = { token: 'fake-jwt-token' }; // Mock response
+    const mockResponse: AuthResponse = { token: 'fake-jwt-token' };
     return new Observable((observer) => {
       observer.next(mockResponse);
       observer.complete();

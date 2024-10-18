@@ -16,6 +16,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     SeatsComponent,
     DashboardComponent,
     FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,6 @@ import { AuthResponse } from '../../app/auth.model';
 export class LoginComponent implements OnInit {
   isSignup: boolean = false;
   authForm: FormGroup;
-  
 
   constructor(
     private fb: FormBuilder,
@@ -44,7 +43,7 @@ export class LoginComponent implements OnInit {
             if (response) {
               console.log('Sign-up successful:', response);
               this.authService.setToken(response.token);
-              this.router.navigate(['/dashboard']);
+              this.router.navigate(['/']);
             } else {
               console.error('Sign-up failed: No response');
             }
@@ -57,7 +56,7 @@ export class LoginComponent implements OnInit {
             if (response) {
               console.log('Login successful:', response);
               this.authService.setToken(response.token);
-              this.router.navigate(['/dashboard']);
+              this.router.navigate(['/buslist']);
             } else {
               console.error('Login failed: No response');
             }

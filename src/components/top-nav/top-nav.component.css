@@ -1,6 +1,11 @@
 .main-container {
-  padding: 10px 20px 10px 20px;
-  background-color: #45474B;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: #333;
   color: #fff;
 }
 
@@ -28,13 +33,13 @@
 }
 
 .item p svg {
-  color: #FDA403;
+  color: #ff8c32;
   height: 20px;
   width: 20px;
   cursor: pointer;
 }
 .right .social-icons p svg {
-  color: #FDA403;
+  color: #ff8c32;
   height: 20px;
   width: 20px;
   border-radius: 5px;
@@ -49,7 +54,8 @@
     padding: 10px;
   }
 
-  .left, .right {
+  .left,
+  .right {
     flex-direction: column; /* Stack items vertically */
     align-items: flex-start; /* Align items to the start */
     gap: 20px; /* Reduce gap between items */

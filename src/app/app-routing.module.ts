@@ -6,21 +6,41 @@ import { LoginComponent } from 'src/components/login/login.component';
 import { CctvComponent } from 'src/components/cctv/cctv.component';
 import { LocationComponent } from 'src/components/location/location.component';
 import { SeatsComponent } from 'src/components/seats/seats.component';
-import { AuthGuard } from './auth.guard'; // Adjust the import path as necessary
+import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
+
+import { AuthGuard } from './auth.guard';
+import { BuslistComponent } from 'src/components/buslist/buslist.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: SidebarComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'buslist',
+      },
+      {
+        path: 'buslist',
+        component: BuslistComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      { path: 'cctv', component: CctvComponent },
+      {
+        path: 'location',
+        component: LocationComponent,
+      },
+      { path: 'seats', component: SeatsComponent },
+    ],
   },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
-  },
-  { path: 'cctv', component: CctvComponent, canActivate: [AuthGuard] },
-  { path: 'location', component: LocationComponent, canActivate: [AuthGuard] },
-  { path: 'seats', component: SeatsComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
