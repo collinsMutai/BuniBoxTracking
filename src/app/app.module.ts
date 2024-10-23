@@ -17,6 +17,7 @@ import { FooterComponent } from 'src/components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
+import { BuslistComponent } from 'src/components/buslist/buslist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
     SeatsComponent,
     DashboardComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    BuslistComponent
   ],
   imports: [
     BrowserModule,
