@@ -1,6 +1,6 @@
 .main-container {
   padding: 20px 0;
-  min-height: 100vh;
+  height: auto;
 }
 
 .card {
@@ -111,6 +111,62 @@ tbody tr:nth-child(2) {
 }
 
 .form-group {
-  width: 60px; 
+  width: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
 }
 
+.icon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+#dropdownMenuButton {
+  background: transparent;
+  color: #333;
+  font-size: 15px;
+  padding: 2px 4px;
+  width: 50px;
+  border-radius: 0px;
+}
+.select-container select {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+.select-container svg {
+  height: 40px;
+  width: 40px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.select-container:hover {
+  border-color: #ff8c32;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search input {
+  width: 200px;
+  border: 2px solid #ff8c32;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #ff8c32;
+  box-shadow: 0 0 5px rgba(255, 140, 50, 0.5);
+  outline: none; 
+}

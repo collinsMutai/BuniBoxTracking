@@ -1,110 +1,175 @@
-<div class="main-container container">
-  <div class="row">
-    <div class="col-12 col-md-8 col-lg-10">
-      <div class="card">
-        <h5 class="card-title">Bus List</h5>
-         <div class="form-group">
-          <label for="entriesPerPage">Show Entries:</label>
-          <select id="entriesPerPage" class="form-control" (change)="onEntriesPerPageChange($event)">
-            <option *ngFor="let option of entriesOptions" [value]="option">{{ option  }}</option>
-            
-          </select>
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th style="background-color: #ff8c32; color: #fff" scope="col">
-                  Bus Registration
-                </th>
-                <th style="background-color: #ff8c32; color: #fff" scope="col">
-                  Route
-                </th>
-                <th style="background-color: #ff8c32; color: #fff" scope="col">
-                  View Details
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let bus of paginatedBuses">
-                <td scope="row">{{ bus.registration }}</td>
-                <td>{{ bus.route }}</td>
-                <td>
-                  <svg
-                    (click)="viewBusHandler()"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon viewIcon icon-tabler icons-tabler-outline icon-tabler-eye"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                    <path
-                      d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
-                    />
-                  </svg>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="pagination justify-content-end">
-            <ul class="pagination">
-              <li class="page-item previous" [class.disabled]="isFirstPage()">
-                <a class="page-link" (click)="previousPage()">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-left"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M11 7l-5 5l5 5" />
-                    <path d="M17 7l-5 5l5 5" />
-                  </svg>
-                </a>
-              </li>
-              <li
-                class="page-item"
-                *ngFor="let page of [].constructor(totalPages); let i = index"
-                [class.active]="currentPage === i + 1"
-              >
-                <a class="page-link" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
-              </li>
-              <li class="page-item next" [class.disabled]="isLastPage()">
-                <a class="page-link" (click)="nextPage()">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M7 7l5 5l-5 5" />
-                    <path d="M13 7l5 5l-5 5" />
-                  </svg>
-                </a>
+<div class="card">
+  <div class="card-header" style="background-color: transparent">
+    <h5 class="mb-0">Bus List</h5>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex align-items-center mb-3">
+          <div class="dropdown me-2">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ selectedOption }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li *ngFor="let option of entriesOptions">
+                <a class="dropdown-item" (click)="selectOption(option)">{{
+                  option
+                }}</a>
               </li>
             </ul>
           </div>
+          <p class="mb-0">entries per page</p>
+
+          <div class="ms-auto search">
+            <label class="ms-3 mb-0" for="searchBuses">Search Buses</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search buses..."
+              [(ngModel)]="searchTerm"
+              (input)="filterBuses()"
+              style="width: 200px"
+            />
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="background-color: #666; color: #fff" scope="col">
+                Bus Registration
+              </th>
+              <th style="background-color: #666; color: #fff" scope="col">
+                Route
+              </th>
+              <th style="background-color: #666; color: #fff" scope="col">
+                View Details
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bus of paginatedBuses">
+              <td scope="row">{{ bus.registration }}</td>
+              <td>{{ bus.route }}</td>
+              <td>
+                <svg
+                  (click)="viewBusHandler(bus.id)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon viewIcon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                  <path
+                    d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
+                  />
+                </svg>
+                <svg
+                style="color: green;"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"
+                  />
+                  <path d="M13.5 6.5l4 4" />
+                </svg>
+                <svg
+                style="color: red;"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-trash-x"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 7h16" />
+                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                  <path d="M10 12l4 4m0 -4l-4 4" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination justify-content-end">
+          <ul class="pagination">
+            <li class="page-item previous" [class.disabled]="isFirstPage()">
+              <a class="page-link" (click)="previousPage()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M11 7l-5 5l5 5" />
+                  <path d="M17 7l-5 5l5 5" />
+                </svg>
+              </a>
+            </li>
+            <li
+              class="page-item"
+              *ngFor="let page of [].constructor(totalPages); let i = index"
+              [class.active]="currentPage === i + 1"
+            >
+              <a class="page-link" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
+            </li>
+            <li class="page-item next" [class.disabled]="isLastPage()">
+              <a class="page-link" (click)="nextPage()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 7l5 5l-5 5" />
+                  <path d="M13 7l5 5l-5 5" />
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FooterComponent } from 'src/components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 import { BuslistComponent } from 'src/components/buslist/buslist.component';
@@ -41,6 +41,8 @@ import { BuslistComponent } from 'src/components/buslist/buslist.component';
     TooltipModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

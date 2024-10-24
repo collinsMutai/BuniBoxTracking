@@ -1,12 +1,12 @@
 .footer-container {
-  background-color: #FF8C32;
-  color: #fff;
+  background-color: #CCCCCC;
   padding: 20px 0;
 }
 
 .footer-container p {
   margin: 0;
   font-size: 14px;
-  color: #fff;
+  font-weight: 500;
+  color: #333;
   text-align: center;
 }

@@ -1,6 +1,6 @@
 .main-container {
   padding: 20px 0px;
-  height: 100vh;
+  height: auto;
 }
 .search label {
   font-size: 16px;

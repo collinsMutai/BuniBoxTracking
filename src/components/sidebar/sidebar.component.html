@@ -1,51 +1,12 @@
 <div class="container-fluid main-container">
-  <app-top-nav></app-top-nav> 
+  <app-top-nav></app-top-nav>
   <div class="layout">
     <div class="sidebar" [ngClass]="{ collapsed: isCollapsed }">
-      <!-- <div class="toggle" (click)="toggleHandler()">
-        <div *ngIf="!isCollapsed" class="svg-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
-        </div>
-        <div *ngIf="isCollapsed" class="svg-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 6l16 0" />
-            <path d="M4 12l16 0" />
-            <path d="M4 18l16 0" />
-          </svg>
-        </div>
-      </div> -->
       <h3 class="text-center">BuniBox</h3>
       <div class="main-nav">
         <ul>
           <li>
-            <a routerLink="/buslist">
+            <a routerLink="/buslist" routerLinkActive="active">
               <div class="nav-item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +36,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="/dashboard">
+            <a routerLink="/dashboard/1" routerLinkActive="active">
               <div class="nav-item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +60,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="/cctv">
+            <a routerLink="/cctv" routerLinkActive="active">
               <div class="nav-item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +72,6 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-device-cctv"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path
@@ -126,7 +86,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="/location">
+            <a routerLink="/location" routerLinkActive="active">
               <div class="nav-item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +98,6 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-map-pins"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path
@@ -167,7 +126,6 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-user-circle"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -179,44 +137,50 @@
         <p>Logout</p>
       </div>
     </div>
-    <div class="content">
-      <div class="toggle" (click)="toggleHandler()">
-        <div *ngIf="!isCollapsed" class="svg-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
+    <div
+      class="content"
+      [ngClass]="{ expanded: !isCollapsed, collapsed: isCollapsed }"
+    >
+      <div class="toggle-main-nav-container">
+        <div class="toggle" (click)="toggleHandler()">
+          <div *ngIf="!isCollapsed" class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </div>
+          <div *ngIf="isCollapsed" class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 6l16 0" />
+              <path d="M4 12l16 0" />
+              <path d="M4 18l16 0" />
+            </svg>
+          </div>
         </div>
-        <div *ngIf="isCollapsed" class="svg-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 6l16 0" />
-            <path d="M4 12l16 0" />
-            <path d="M4 18l16 0" />
-          </svg>
+        <div class="mainnav">
+          <app-main-nav></app-main-nav>
         </div>
       </div>
       <router-outlet></router-outlet>

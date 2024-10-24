@@ -30,7 +30,7 @@ const routes: Routes = [
         component: LoginComponent,
       },
       {
-        path: 'dashboard',
+        path: 'dashboard/:id',
         component: DashboardComponent,
       },
       { path: 'cctv', component: CctvComponent },

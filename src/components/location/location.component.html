@@ -1,21 +1,32 @@
-<div class="container main-container">
-  <div class="mb-5 d-flex align-items-center justify-content-center search">
-    <label for="exampleFormControlInput1" class="form-label me-2">Search Bus</label>
-    <input
-      type="text"
-      class="form-control me-2"
-      id="exampleFormControlInput1"
-      placeholder="Search for a bus"
-      style="max-width: 300px"
-    />
-    <button
-      type="button"
-      class="btn"
-      style="color: #fff; background-color: #fda403; padding: 8px 10px; border: none;"
-      (click)="onSearch()"
-    >
-      Search
-    </button>
+<div class="card" style="height: auto;">
+  <div class="card-body">
+    <div class="container main-container">
+      <div class="mb-5 d-flex align-items-center justify-content-center search">
+        <label for="exampleFormControlInput1" class="form-label me-2"
+          >Search Bus</label
+        >
+        <input
+          type="text"
+          class="form-control me-2"
+          id="exampleFormControlInput1"
+          placeholder="Search for a bus"
+          style="max-width: 300px"
+        />
+        <button
+          type="button"
+          class="btn"
+          style="
+            color: #fff;
+            background-color: #FF8C32;
+            padding: 8px 10px;
+            border: none;
+          "
+          (click)="onSearch()"
+        >
+          Search
+        </button>
+      </div>
+      <div class="row" id="map" style="height: 350px"></div>
+    </div>
   </div>
-  <div class="row" id="map" style="height: 350px;"></div>
 </div>
