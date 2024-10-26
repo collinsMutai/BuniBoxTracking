@@ -1,0 +1,25 @@
+.main-container {
+  padding: 40px 0px;
+  height: auto;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart {
+  flex: 1;
+  margin: 10px;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.svg-container svg {
+  height: 25px;
+  width: 25px;
+  color: #ff8c32;
+}

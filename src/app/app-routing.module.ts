@@ -1,7 +1,7 @@
 // app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
+import { OccupancyComponent } from 'src/components/dashboard/occupancy.component';
 import { LoginComponent } from 'src/components/login/login.component';
 import { CctvComponent } from 'src/components/cctv/cctv.component';
 import { LocationComponent } from 'src/components/location/location.component';
@@ -10,6 +10,7 @@ import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 
 import { AuthGuard } from './auth.guard';
 import { BuslistComponent } from 'src/components/buslist/buslist.component';
+import { ChartComponent } from 'src/components/chart/chart.component';
 
 const routes: Routes = [
   {
@@ -30,8 +31,12 @@ const routes: Routes = [
         component: LoginComponent,
       },
       {
-        path: 'dashboard/:id',
-        component: DashboardComponent,
+        path: 'dashboard',
+        component: ChartComponent,
+      },
+      {
+        path: 'occupancy/:id',
+        component: OccupancyComponent,
       },
       { path: 'cctv', component: CctvComponent },
       {

@@ -9,7 +9,7 @@ import { LoginComponent } from 'src/components/login/login.component';
 import { CctvComponent } from 'src/components/cctv/cctv.component';
 import { LocationComponent } from 'src/components/location/location.component';
 import { SeatsComponent } from 'src/components/seats/seats.component';
-import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
+import { OccupancyComponent } from 'src/components/dashboard/occupancy.component';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -28,10 +28,10 @@ import { BuslistComponent } from 'src/components/buslist/buslist.component';
     CctvComponent,
     LocationComponent,
     SeatsComponent,
-    DashboardComponent,
+    OccupancyComponent,
     FooterComponent,
     SidebarComponent,
-    BuslistComponent
+    BuslistComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { BuslistComponent } from 'src/components/buslist/buslist.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
