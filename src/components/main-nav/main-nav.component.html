@@ -32,19 +32,19 @@
               <li class="nav-item" [ngClass]="{ active: activeLink === '/about' }">
                 <a
                   class="nav-link me-3"
-                  routerLink="/about"
+                  routerLink="/about-us"
                   (click)="setActiveLink('/about')"
                   >About</a
                 >
               </li>
               <li
                 class="nav-item"
-                [ngClass]="{ active: activeLink === '/about' }"
+                [ngClass]="{ active: activeLink === '/our-services' }"
               >
                 <a
                   class="nav-link me-3"
-                  routerLink="dashboard"
-                  (click)="setActiveLink('/services')"
+                  routerLink="our-services"
+                  (click)="setActiveLink('/our-services')"
                   >Services</a
                 >
               </li>

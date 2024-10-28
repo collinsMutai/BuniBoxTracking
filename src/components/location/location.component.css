@@ -5,16 +5,16 @@
 .search label {
   font-size: 16px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+   font-family: "Roboto", sans-serif;
 }
 .search input::placeholder {
   color: #a9a9a9;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .search button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
 }

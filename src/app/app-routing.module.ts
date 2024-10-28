@@ -11,6 +11,8 @@ import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 import { AuthGuard } from './auth.guard';
 import { BuslistComponent } from 'src/components/buslist/buslist.component';
 import { ChartComponent } from 'src/components/chart/chart.component';
+import { AboutUsComponent } from 'src/components/about-us/about-us.component';
+import { ServicesComponent } from 'src/components/services/services.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         redirectTo: 'buslist',
+      },
+      {
+        path: 'about-us',
+        component: AboutUsComponent,
+      },
+      {
+        path: 'our-services',
+        component: ServicesComponent,
       },
       {
         path: 'buslist',

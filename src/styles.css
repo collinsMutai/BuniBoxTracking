@@ -1,7 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Lato&family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -13,31 +12,32 @@ body {
   overflow-x: hidden; 
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
 }
 p{
-   font-family: "Montserrat", sans-serif;
+     font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
 }
-h3 {
-  font-family: "Lato", sans-serif;
+
+h3, h4, h5 {
+   font-family: "Khand", serif;
   font-weight: 500;
   font-style: normal;
 }
 
 h2 {
-  font-family: "Lato", sans-serif;
+   font-family: "Khand", serif;
   font-weight: 700;
   font-style: normal;
 }
 
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "Khand", serif;
   font-weight: 900;
   font-style: normal;
 }

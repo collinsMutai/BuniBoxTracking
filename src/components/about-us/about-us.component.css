@@ -1,0 +1,152 @@
+.main-container {
+  display: flex;
+  padding: 80px;
+  min-height: 100vh;
+  background-color: #fff;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+  border-radius: 5px;
+}
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.section-title {
+  color: #1c2025;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin: 0 0 60px -4px;
+  letter-spacing: 2px;
+  font-family: "Khand", sans-serif;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: titleFadeIn 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes titleFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 6px !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-left: 2px solid #ff8c32;
+  border-right: 2px solid #ff8c32;
+  display: inline-block;
+  padding: 0 15px;
+  line-height: 1.2 !important;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: subtitleFadeIn 0.5s forwards;
+  animation-delay: 0.4s;
+  box-sizing: border-box;
+  width: fit-content;
+}
+
+@keyframes subtitleFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+p {
+  color: #30353e;
+  margin: 0 0 30px;
+  line-height: 1.8 !important;
+  letter-spacing: 1px !important;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: paragraphFadeIn 0.5s forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes paragraphFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aboutBtn {
+  background-color: #1c2025;
+  color: #fff !important;
+  border-radius: 0;
+  font-family: "Khand", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 0 32px;
+  margin: 30px 0 30px 0;
+  letter-spacing: 1px;
+  height: 40px;
+  line-height: 42px;
+  border: none;
+  cursor: pointer;
+  animation: none;
+  width: 150px;
+  display: inline-block;
+}
+
+@keyframes buttonHover {
+  0% {
+    background-color: #1c2025;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #ff8c32;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: #1c2025;
+    transform: scale(1);
+  }
+}
+
+.aboutBtn:hover {
+  animation: buttonHover 0.5s ease forwards;
+}
+
+.col-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.aboutImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  opacity: 0;
+  animation: imageScaleIn 0.8s forwards;
+}
+
+@keyframes imageScaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

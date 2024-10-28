@@ -97,16 +97,16 @@
 .search label {
   font-size: 16px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .search input::placeholder {
   color: #a9a9a9;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .search button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
 }
@@ -294,10 +294,11 @@
     left: auto;
     flex-direction: column;
   }
- .rowfl{
-  gap: 10px;
- }
-  .fl2, .fl1{
+  .rowfl {
+    gap: 10px;
+  }
+  .fl2,
+  .fl1 {
     padding: 0px 40px;
     width: 100%;
   }
