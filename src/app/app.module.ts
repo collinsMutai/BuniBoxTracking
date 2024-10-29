@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 import { BuslistComponent } from 'src/components/buslist/buslist.component';
+import { AboutUsComponent } from 'src/components/about-us/about-us.component';
+import { ServicesComponent } from 'src/components/our-services/services.component';
+import { ContactUsComponent } from 'src/components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { BuslistComponent } from 'src/components/buslist/buslist.component';
     FooterComponent,
     SidebarComponent,
     BuslistComponent,
+    AboutUsComponent,
+    ServicesComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

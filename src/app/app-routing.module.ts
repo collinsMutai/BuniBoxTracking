@@ -12,7 +12,8 @@ import { AuthGuard } from './auth.guard';
 import { BuslistComponent } from 'src/components/buslist/buslist.component';
 import { ChartComponent } from 'src/components/chart/chart.component';
 import { AboutUsComponent } from 'src/components/about-us/about-us.component';
-import { ServicesComponent } from 'src/components/services/services.component';
+import { ServicesComponent } from 'src/components/our-services/services.component';
+import { ContactUsComponent } from 'src/components/contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'our-services',
         component: ServicesComponent,
+      },
+      {
+        path: 'contact-us',
+        component: ContactUsComponent,
       },
       {
         path: 'buslist',

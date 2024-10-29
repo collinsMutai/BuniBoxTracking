@@ -1,6 +1,7 @@
 .main-container {
   display: flex;
-  padding: 80px;
+  flex-direction: column;
+  padding: 60px;
   min-height: 100vh;
   background-color: #fff;
   opacity: 0;
@@ -24,7 +25,8 @@
   font-weight: 500;
   line-height: 0.9;
   text-transform: uppercase;
-  margin: 0 0 60px -4px;
+  margin: 0 10px 60px -4px;
+
   letter-spacing: 2px;
   font-family: "Khand", sans-serif;
   opacity: 0;
@@ -49,7 +51,7 @@
   margin-bottom: 20px;
   border-left: 2px solid #ff8c32;
   border-right: 2px solid #ff8c32;
-  display: block;
+  display: inline-block;
   padding: 0 15px;
   line-height: 1.2 !important;
   opacity: 0;
@@ -58,7 +60,6 @@
   animation-delay: 0.4s;
   box-sizing: border-box;
   width: fit-content;
-  text-align: center;
 }
 
 @keyframes subtitleFadeIn {
@@ -69,6 +70,7 @@
 }
 
 p {
+  text-align: center;
   color: #30353e;
   margin: 0 0 30px;
   line-height: 1.8 !important;
@@ -86,62 +88,13 @@ p {
   }
 }
 
-.aboutBtn {
-  background-color: #1c2025;
-  color: #fff !important;
-  border-radius: 0;
-  font-family: "Khand", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: capitalize;
-  padding: 0 32px;
-  margin: 30px 0 30px 0;
-  letter-spacing: 1px;
-  height: 40px;
-  line-height: 42px;
-  border: none;
-  cursor: pointer;
-  animation: none;
-  width: 150px;
-  display: inline-block;
-}
-
-@keyframes buttonHover {
-  0% {
-    background-color: #1c2025;
-    transform: scale(1);
-  }
-  50% {
-    background-color: #ff8c32;
-    transform: scale(1.05);
-  }
-  100% {
-    background-color: #1c2025;
-    transform: scale(1);
-  }
-}
-
-.aboutBtn:hover {
-  animation: buttonHover 0.5s ease forwards;
-}
-
-.col-6 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-}
-
-.aboutImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  max-height: 100%;
+.cardAnimation {
   opacity: 0;
-  animation: imageScaleIn 0.8s forwards;
+  animation: cardScaleIn 0.8s forwards;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes imageScaleIn {
+@keyframes cardScaleIn {
   0% {
     transform: scale(0.9);
     opacity: 0;
@@ -152,10 +105,27 @@ p {
   }
 }
 
+.cardAnimation:hover {
+  background-color: #333333;
+  color: white;
+  transform: scale(1.05);
+}
+
+.card-body:hover p {
+  color: white;
+}
+
+svg {
+  color: #ff8c32;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
 hr {
-    border-top: 2px solid #ff8c32; 
-    width: 40px; 
-    margin: 1.3em auto; 
-    position: relative; 
-    opacity: 1; 
+  border-top: 2px solid #ff8c32;
+  width: 40px;
+  margin: 1.3em auto;
+  position: relative;
+  opacity: 1;
 }
