@@ -21,6 +21,9 @@ import { BuslistComponent } from 'src/components/buslist/buslist.component';
 import { AboutUsComponent } from 'src/components/about-us/about-us.component';
 import { ServicesComponent } from 'src/components/our-services/services.component';
 import { ContactUsComponent } from 'src/components/contact-us/contact-us.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,7 @@ import { ContactUsComponent } from 'src/components/contact-us/contact-us.compone
     BuslistComponent,
     AboutUsComponent,
     ServicesComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,8 @@ import { ContactUsComponent } from 'src/components/contact-us/contact-us.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    CarouselModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

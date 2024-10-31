@@ -14,8 +14,10 @@ import { ChartComponent } from 'src/components/chart/chart.component';
 import { AboutUsComponent } from 'src/components/about-us/about-us.component';
 import { ServicesComponent } from 'src/components/our-services/services.component';
 import { ContactUsComponent } from 'src/components/contact-us/contact-us.component';
+import { HomeComponent } from '../components/home/home.component';
 
 const routes: Routes = [
+
   {
     path: '',
     component: SidebarComponent,
@@ -24,6 +26,10 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         redirectTo: 'buslist',
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
       },
       {
         path: 'about-us',

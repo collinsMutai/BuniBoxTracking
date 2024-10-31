@@ -1,0 +1,61 @@
+<div class="container-fluid main-container">
+  <div class="slider">
+    <div class="overlay"></div>
+    <div class="slides">
+      <div class="slide">
+        <img
+          src="https://cdn.pixabay.com/photo/2022/11/05/10/30/bus-7571545_1280.jpg"
+          alt="First slide"
+        />
+        <div class="caption">
+          <h2>Bus Tracking</h2>
+          <p>
+            BuniBox delivers instant updates on bus locations and statuses,
+            allowing users to effortlessly plan their trips with assurance.
+          </p>
+          <button (click)="navigateToAbout()" class="aboutBtn">About Us</button>
+          <button (click)="navigateToContact()" class="contactBtn">
+            Contact Us
+          </button>
+        </div>
+      </div>
+      <div class="slide">
+        <img
+          src="https://cdn.pixabay.com/photo/2022/01/08/20/46/transport-6924808_1280.jpg"
+          alt="Second slide"
+        />
+        <div class="caption">
+          <h2>Seat Occupancy Status</h2>
+          <p>
+            Monitor real-time seat occupancy on buses with BuniBox, providing
+            instant updates on available and occupied seats to enhance your
+            travel experience.
+          </p>
+          <button (click)="navigateToAbout()" class="aboutBtn">About Us</button>
+          <button (click)="navigateToContact()" class="contactBtn">
+            Contact Us
+          </button>
+        </div>
+      </div>
+      <div class="slide">
+        <img
+          src="https://cdn.pixabay.com/photo/2018/08/03/19/42/london-3582649_1280.jpg"
+          alt="Third slide"
+        />
+        <div class="caption">
+          <h2>Live CCTV</h2>
+          <p>
+            BuniBox boosts safety and transparency by providing live CCTV video
+            feeds, enabling passengers to monitor their journeys in real time.
+          </p>
+          <button (click)="navigateToAbout()" class="aboutBtn">About Us</button>
+          <button (click)="navigateToContact()" class="contactBtn">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="prev" (click)="changeSlide(-1)">&#10094;</button>
+    <button class="next" (click)="changeSlide(1)">&#10095;</button>
+  </div>
+</div>
