@@ -2,11 +2,12 @@
   <div class="slider">
     <div class="overlay"></div>
     <div class="slides">
-      <div class="slide">
-        <img
-          src="https://cdn.pixabay.com/photo/2022/11/05/10/30/bus-7571545_1280.jpg"
-          alt="First slide"
-        />
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2022/11/05/10/30/bus-7571545_1280.jpg');
+        "
+      >
         <div class="caption">
           <h2>Bus Tracking</h2>
           <p>
@@ -19,11 +20,12 @@
           </button>
         </div>
       </div>
-      <div class="slide">
-        <img
-          src="https://cdn.pixabay.com/photo/2022/01/08/20/46/transport-6924808_1280.jpg"
-          alt="Second slide"
-        />
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2022/01/08/20/46/transport-6924808_1280.jpg');
+        "
+      >
         <div class="caption">
           <h2>Seat Occupancy Status</h2>
           <p>
@@ -37,11 +39,12 @@
           </button>
         </div>
       </div>
-      <div class="slide">
-        <img
-          src="https://cdn.pixabay.com/photo/2018/08/03/19/42/london-3582649_1280.jpg"
-          alt="Third slide"
-        />
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2018/08/03/19/42/london-3582649_1280.jpg');
+        "
+      >
         <div class="caption">
           <h2>Live CCTV</h2>
           <p>
@@ -57,5 +60,160 @@
     </div>
     <button class="prev" (click)="changeSlide(-1)">&#10094;</button>
     <button class="next" (click)="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="container-fluid mt-5 mb-5" style="display: flex;">
+    <div class="left-column">
+      <p class="section-subtitle">Why Choose Us</p>
+      <h3 class="section-title">BuniBox: Revolutionizing Public Transit</h3>
+      <p>
+        At BuniBox, we are committed to enhancing the public transit experience
+        for passengers. Our state-of-the-art bus tracking platform offers
+        real-time updates on bus locations and statuses, empowering users to
+        navigate their journeys with confidence and ease.
+      </p>
+
+      <div style="display: flex; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">Real-Time Information</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">User-Friendly Experience</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">Enhanced Safety</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">Real-Time Information</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">User-Friendly Experience</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">Reliability</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="sliderr">
+        <div class="slideri active">
+          <img
+            src="https://cdn.pixabay.com/photo/2022/11/05/10/30/bus-7571545_1280.jpg"
+            alt="Image 1"
+          />
+        </div>
+        <div class="slideri">
+          <img
+            src="https://cdn.pixabay.com/photo/2022/01/08/20/46/transport-6924808_1280.jpg"
+            alt="Image 2"
+          />
+        </div>
+        <div class="slideri">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/08/03/19/42/london-3582649_1280.jpg"
+            alt="Image 3"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
