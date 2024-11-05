@@ -7,10 +7,6 @@
   animation: fadeIn 0.8s forwards;
   border-radius: 5px;
 }
-.row {
-  display: flex;
-  flex-wrap: nowrap;
-}
 
 @keyframes fadeIn {
   to {
@@ -153,9 +149,19 @@ p {
 }
 
 hr {
-    border-top: 2px solid #ff8c32; 
-    width: 40px; 
-    margin: 1.3em auto; 
-    position: relative; 
-    opacity: 1; 
+  border-top: 2px solid #ff8c32;
+  width: 40px;
+  margin: 1.3em auto;
+  position: relative;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .row {
+    flex-direction: column;
+  }
 }

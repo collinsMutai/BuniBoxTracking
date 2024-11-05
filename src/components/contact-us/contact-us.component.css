@@ -202,3 +202,23 @@ textarea {
   border-radius: 4px;
   transition: border 0.3s ease;
 }
+
+.content-row {
+  display: flex;
+  gap: 40px;
+}
+
+.card-two {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .icon-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

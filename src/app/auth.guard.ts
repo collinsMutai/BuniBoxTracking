@@ -1,4 +1,3 @@
-// auth.guard.ts
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
@@ -18,9 +17,9 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const isAuthenticated = !!this.authService.getToken(); // Check if the user is authenticated
+    const isAuthenticated = this.authService.isLoggedIn(); // Use isLoggedIn() method for clarity
     if (!isAuthenticated) {
-      this.router.navigate(['/']); // Redirect to the login page if not authenticated
+      this.router.navigate(['/login']); // Redirect to the login page if not authenticated
     }
     return isAuthenticated;
   }

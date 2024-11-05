@@ -17,7 +17,6 @@ import { ContactUsComponent } from 'src/components/contact-us/contact-us.compone
 import { HomeComponent } from '../components/home/home.component';
 
 const routes: Routes = [
-
   {
     path: '',
     component: SidebarComponent,
@@ -46,6 +45,7 @@ const routes: Routes = [
       {
         path: 'buslist',
         component: BuslistComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'login',
@@ -54,17 +54,21 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: ChartComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'occupancy/:id',
         component: OccupancyComponent,
+        canActivate: [AuthGuard],
       },
-      { path: 'cctv', component: CctvComponent },
+      { path: 'cctv', component: CctvComponent, canActivate: [AuthGuard] },
+
       {
         path: 'location',
         component: LocationComponent,
+        canActivate: [AuthGuard],
       },
-      { path: 'seats', component: SeatsComponent },
+      { path: 'seats', component: SeatsComponent, canActivate: [AuthGuard] },
     ],
   },
 ];

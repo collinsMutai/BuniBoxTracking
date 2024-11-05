@@ -14,14 +14,22 @@ export class TopNavComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    // Subscribe to token changes
+   
     this.authService.token$.subscribe((token) => {
-      this.isLoggedIn = !!token; // Update login status
+      this.isLoggedIn = !!token; 
     });
   }
 
-  logout(): void {
-    this.authService.logout(); // Call logout method
-    this.router.navigate(['/']); // Redirect to login page after logout
+  loginHandler() {
+    console.log('Login handler clicked, isLoggedIn:', this.isLoggedIn);
+    if (this.isLoggedIn) {
+      this.authService.logout();
+      this.router.navigate(['/home']);
+      this.isLoggedIn = false; 
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
+
+ 
 }

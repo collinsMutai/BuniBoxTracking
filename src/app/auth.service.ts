@@ -18,6 +18,10 @@ export class AuthService {
     return this.tokenSubject.value;
   }
 
+  isLoggedIn(): boolean {
+    return this.getToken() !== null; // Check if the token exists
+  }
+
   logout(): void {
     this.tokenSubject.next(null);
     localStorage.removeItem('token');

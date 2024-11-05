@@ -61,7 +61,7 @@
     <button class="prev" (click)="changeSlide(-1)">&#10094;</button>
     <button class="next" (click)="changeSlide(1)">&#10095;</button>
   </div>
-  <div class="container-fluid mt-5 mb-5" style="display: flex;">
+  <div class="container-fluid mt-5 mb-5 home-content">
     <div class="left-column">
       <p class="section-subtitle">Why Choose Us</p>
       <h3 class="section-title">BuniBox: Revolutionizing Public Transit</h3>
@@ -72,9 +72,9 @@
         navigate their journeys with confidence and ease.
       </p>
 
-      <div style="display: flex; justify-content: space-between;">
-        <div>
-          <div style="display: flex; align-items: center; gap: 15px">
+      <div style="" class="icon-container">
+        <ul>
+          <li style="">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -92,8 +92,8 @@
               <path d="M9 12l2 2l4 -4" />
             </svg>
             <p style="margin: 0">Real-Time Information</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 15px">
+          </li>
+          <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -111,8 +111,27 @@
               <path d="M9 12l2 2l4 -4" />
             </svg>
             <p style="margin: 0">User-Friendly Experience</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 15px">
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M9 12l2 2l4 -4" />
+            </svg>
+            <p style="margin: 0">Real-Time Information</p>
+          </li>
+          <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -130,29 +149,8 @@
               <path d="M9 12l2 2l4 -4" />
             </svg>
             <p style="margin: 0">Enhanced Safety</p>
-          </div>
-        </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 15px">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-              <path d="M9 12l2 2l4 -4" />
-            </svg>
-            <p style="margin: 0">Real-Time Information</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 15px">
+          </li>
+          <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -170,8 +168,8 @@
               <path d="M9 12l2 2l4 -4" />
             </svg>
             <p style="margin: 0">User-Friendly Experience</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 15px">
+          </li>
+          <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -189,8 +187,9 @@
               <path d="M9 12l2 2l4 -4" />
             </svg>
             <p style="margin: 0">Reliability</p>
-          </div>
-        </div>
+          </li>
+        </ul>
+        
       </div>
     </div>
     <div class="right-column">

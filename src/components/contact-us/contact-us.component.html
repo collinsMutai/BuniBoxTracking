@@ -13,250 +13,258 @@
       <h3 class="section-title">CONTACT US</h3>
     </div>
   </div>
-  <div class="row d-flex align-items-stretch">
-    <div class="col-md-6">
-      <div class="card h-100 cardAnimation">
-        <div class="card-body d-flex flex-column align-items-center">
-          <h5 class="card-title">Send A Message</h5>
-          <hr />
-          <p>
-            Have a question? Reach out to us using the form below, and our team
-            will get back to you as soon as possible.
-          </p>
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="w-100">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input
-                type="text"
-                id="name"
-                formControlName="name"
-                class="form-control"
-              />
-              <div
-                *ngIf="
-                  contactForm.get('name')?.invalid &&
-                  (contactForm.get('name')?.touched ||
-                    contactForm.get('name')?.dirty)
-                "
-                class="text-danger"
-              >
-                Name is required.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                formControlName="email"
-                class="form-control"
-              />
-              <div
-                *ngIf="
-                  contactForm.get('email')?.invalid &&
-                  (contactForm.get('email')?.touched ||
-                    contactForm.get('email')?.dirty)
-                "
-                class="text-danger"
-              >
-                A valid email is required.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input
-                type="text"
-                id="phone"
-                formControlName="phone"
-                class="form-control"
-              />
-              <div
-                *ngIf="
-                  contactForm.get('phone')?.invalid &&
-                  (contactForm.get('phone')?.touched ||
-                    contactForm.get('phone')?.dirty)
-                "
-                class="text-danger"
-              >
-                Phone number is required and must be numeric.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea
-                id="message"
-                formControlName="message"
-                class="form-control"
-              ></textarea>
-              <div
-                *ngIf="
-                  contactForm.get('message')?.invalid &&
-                  (contactForm.get('message')?.touched ||
-                    contactForm.get('message')?.dirty)
-                "
-                class="text-danger"
-              >
-                Message is required.
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              class="contactBtn"
-              [disabled]="contactForm.invalid"
+  <div class="content-row">
+    <div class="card cardAnimation" style="flex: 1">
+      <div class="card-body d-flex flex-column align-items-center">
+        <h5 class="card-title">Send A Message</h5>
+        <hr />
+        <p>
+          Have a question? Reach out to us using the form below, and our team
+          will get back to you as soon as possible.
+        </p>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="w-100">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                contactForm.get('name')?.invalid &&
+                (contactForm.get('name')?.touched ||
+                  contactForm.get('name')?.dirty)
+              "
+              class="text-danger"
             >
-              Send
-            </button>
-          </form>
-        </div>
+              Name is required.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                (contactForm.get('email')?.touched ||
+                  contactForm.get('email')?.dirty)
+              "
+              class="text-danger"
+            >
+              A valid email is required.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              formControlName="phone"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                contactForm.get('phone')?.invalid &&
+                (contactForm.get('phone')?.touched ||
+                  contactForm.get('phone')?.dirty)
+              "
+              class="text-danger"
+            >
+              Phone number is required and must be numeric.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              class="form-control"
+            ></textarea>
+            <div
+              *ngIf="
+                contactForm.get('message')?.invalid &&
+                (contactForm.get('message')?.touched ||
+                  contactForm.get('message')?.dirty)
+              "
+              class="text-danger"
+            >
+              Message is required.
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="contactBtn"
+            [disabled]="contactForm.invalid"
+          >
+            Send
+          </button>
+        </form>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="card h-100 cardAnimation">
-        <div class="card-body d-flex flex-column align-items-center">
-          <h5 class="card-title">Contact Info</h5>
-          <hr />
-          <p class="card-text">
-            At BuniBox, we are dedicated to enhancing your public transit
-            experience. Whether you have questions about our services, need
-            support, or want to share your feedback, we’re here to assist you.
-            Want to know more about our services? Feel free to contact us
-            directly through the details listed below.
-          </p>
-          <div class="d-flex justify-content-between w-100 mt-3">
-            <div class="d-flex align-items-center me-3">
-              <div class="me-2" style="display: flex">
-                <div class="svg-container me-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-phone-call"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                      d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
-                    />
-                    <path d="M15 7a2 2 0 0 1 2 2" />
-                    <path d="M15 3a6 6 0 0 1 6 6" />
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="card-title">Phone</h5>
-                  <p class="card-text" style="text-align: left">
-                    +254 789 7677
-                  </p>
-                </div>
-              </div>
+    <div class="card cardAnimation card-two" id="card-two" style="flex: 1">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">Contact Info</h5>
+        <hr />
+        <p class="card-text">
+          At BuniBox, we are dedicated to enhancing your public transit
+          experience. Whether you have questions about our services, need
+          support, or want to share your feedback, we’re here to assist you.
+          Want to know more about our services? Feel free to contact us directly
+          through the details listed below.
+        </p>
+        <div
+          class="icon-container"
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+          "
+        >
+          <div
+            class="icon-item"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <div class="svg-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-buildings"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" />
+                <path d="M16 8h2c1 0 2 1 2 2v11" />
+                <path d="M3 21h18" />
+                <path d="M10 12v0" />
+                <path d="M10 16v0" />
+                <path d="M10 8v0" />
+                <path d="M7 12v0" />
+                <path d="M7 16v0" />
+                <path d="M7 8v0" />
+                <path d="M17 12v0" />
+                <path d="M17 16v0" />
+              </svg>
             </div>
-            <div class="d-flex align-items-center">
-              <div class="me-2" style="display: flex">
-                <div class="svg-container me-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                      d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-                    />
-                    <path d="M3 7l9 6l9 -6" />
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="card-title">Email</h5>
-                  <p class="card-text" style="text-align: left">
-                    info&#64;bunibox.com
-                  </p>
-                </div>
-              </div>
+
+            <div>
+              <h5 class="card-title" style="margin: 0">Address</h5>
+              <p class="card-text" style="text-align: left; margin: 0">
+                ICD Rd, Nairobi, Kenya
+              </p>
             </div>
           </div>
-          <div class="d-flex justify-content-between w-100 mt-5">
-            <div class="d-flex align-items-center me-3">
-              <div class="me-2" style="display: flex; height: 50px">
-                <div class="svg-container me-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-buildings"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" />
-                    <path d="M16 8h2c1 0 2 1 2 2v11" />
-                    <path d="M3 21h18" />
-                    <path d="M10 12v0" />
-                    <path d="M10 16v0" />
-                    <path d="M10 8v0" />
-                    <path d="M7 12v0" />
-                    <path d="M7 16v0" />
-                    <path d="M7 8v0" />
-                    <path d="M17 12v0" />
-                    <path d="M17 16v0" />
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="card-title">Address</h5>
-                  <p class="card-text" style="text-align: left">
-                    ICD Rd, Nairobi, Kenya
-                  </p>
-                </div>
-              </div>
+
+          <div
+            class="icon-item"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <div class="svg-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-clock"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                <path d="M12 7v5l3 3" />
+              </svg>
             </div>
-            <div class="d-flex align-items-center">
-              <div class="me-2" style="display: flex; height: 50px">
-                <div class="svg-container me-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-clock"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                    <path d="M12 7v5l3 3" />
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="card-title">Office Hours</h5>
-                  <p class="card-text" style="text-align: left">
-                    Mon - Fri: 9am-6pm <br />
-                    Sat: 9am - 2pm <br />
-                    Sun: Closed
-                  </p>
-                </div>
-              </div>
+
+            <div>
+              <h5 class="card-title" style="margin: 0">Office Hours</h5>
+              <p class="card-text" style="text-align: left; margin: 0">
+                Mon - Fri: 9am-6pm <br />
+                Sat: 9am - 2pm <br />
+                Sun: Closed
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="icon-item"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <div class="svg-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-phone"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                />
+              </svg>
+            </div>
+
+            <div>
+              <h5 class="card-title" style="margin: 0">Phone Number</h5>
+              <p class="card-text" style="text-align: left; margin: 0">
+                +254 712 345 678
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="icon-item"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <div class="svg-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 4h18v16h-18z" />
+                <path d="M3 4l9 7l9 -7" />
+              </svg>
+            </div>
+
+            <div>
+              <h5 class="card-title" style="margin: 0">Email</h5>
+              <p class="card-text" style="text-align: left; margin: 0">
+                exampleexample.com
+              </p>
             </div>
           </div>
         </div>

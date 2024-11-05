@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="col-6 right">
-      <div class="item"  (click)="logout()">
+      <div class="item" (click)="loginHandler()">
         <p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +91,9 @@
             />
           </svg>
         </p>
-       <p>{{ isLoggedIn ? 'Logout' : 'Login' }}</p>
+        <p>{{ isLoggedIn ? "Logout" : "Login" }}</p>
       </div>
+
       <div class="item">
         <p>
           <svg
