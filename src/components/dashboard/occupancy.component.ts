@@ -66,4 +66,29 @@ export class OccupancyComponent implements OnInit {
       booked: 'yes',
     }));
   }
+
+  // Function to return styles dynamically based on seat number
+  getSeatStyle(seat: Seat) {
+    const isMobile = window.innerWidth <= 768; // Mobile screen width detection
+
+    // Apply specific styles for seat 1 and seat 2 only on mobile
+    if (isMobile) {
+      if (seat.seat === 1) {
+        return {
+          position: 'absolute',
+          top: '0px',
+          right: '0px',
+        };
+      } else if (seat.seat === 2) {
+        return {
+          position: 'absolute',
+          top: '50px',
+          right: '0px',
+        };
+      }
+    }
+
+    // For all other seats, do not apply any specific styles
+    return {};
+  }
 }
