@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 interface Seat {
-  seat: number; // Seat number
-  status: string; // Status of the seat
+  seat: number;
+  status: string;
   booked: string;
 }
 
@@ -44,14 +44,14 @@ export class OccupancyComponent implements OnInit {
 
     this.bottomleft = [
       { seat: 26, status: 'occupied', booked: 'yes' },
-      { seat: 26, status: 'empty', booked: 'no' },
       { seat: 27, status: 'empty', booked: 'no' },
+      { seat: 28, status: 'occupied', booked: 'yes' },
     ];
 
     this.bottom = Array.from({ length: 9 }, (_, i) => ({
-      seat: i + 28,
-      status: 'occupied',
-      booked: 'yes',
+      seat: i + 29,
+      status: 'empty',
+      booked: 'no',
     }));
 
     this.bottom2left = [
@@ -60,35 +60,29 @@ export class OccupancyComponent implements OnInit {
       { seat: 39, status: 'empty', booked: 'yes' },
     ];
 
-    this.bottom2 = Array.from({ length: 9 }, (_, i) => ({
+    this.bottom2 = Array.from({ length: 6 }, (_, i) => ({
       seat: i + 40,
       status: 'empty',
-      booked: 'yes',
+      booked: 'no',
     }));
   }
 
-  // Function to return styles dynamically based on seat number
   getSeatStyle(seat: Seat) {
-    const isMobile = window.innerWidth <= 768; // Mobile screen width detection
+    const isMobile = window.innerWidth <= 426;
 
-    // Apply specific styles for seat 1 and seat 2 only on mobile
     if (isMobile) {
-      if (seat.seat === 1) {
-        return {
-          position: 'absolute',
-          top: '0px',
-          right: '0px',
-        };
-      } else if (seat.seat === 2) {
-        return {
-          position: 'absolute',
-          top: '50px',
-          right: '0px',
-        };
-      }
-    }
+      return {
+        display: 'block',
+        margin: '10px 0',
 
-    // For all other seats, do not apply any specific styles
-    return {};
+        'border-color': seat.status === 'empty' ? 'green' : 'red',
+      };
+    } else {
+      return {
+        display: 'inline-block',
+        margin: '0 10px',
+        'border-color': seat.status === 'empty' ? 'green' : 'red',
+      };
+    }
   }
 }

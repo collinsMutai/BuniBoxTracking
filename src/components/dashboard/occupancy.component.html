@@ -1,6 +1,4 @@
-<div class="card" style="height: auto;">
-  <div class="card-body">
-    <div class="container main-container">
+<div class="container main-container">
   <div class="row rowfl">
     <div class="mb-4 d-flex align-items-center justify-content-center search">
       <label for="exampleFormControlInput1" class="form-label me-2"
@@ -26,6 +24,7 @@
         Search
       </button>
     </div>
+
     <div class="status">
       <p>
         <svg
@@ -40,8 +39,9 @@
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path
             d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          /></svg
-        >Empty
+          />
+        </svg>
+        Empty
       </p>
       <p>
         <svg
@@ -56,8 +56,9 @@
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path
             d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          /></svg
-        >Occupied
+          />
+        </svg>
+        Occupied
       </p>
       <p>
         <svg
@@ -72,8 +73,9 @@
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path
             d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          /></svg
-        >Booked
+          />
+        </svg>
+        Booked
       </p>
       <p>
         <svg
@@ -88,15 +90,18 @@
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path
             d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          /></svg
-        >Not Booked
+          />
+        </svg>
+        Not Booked
       </p>
     </div>
-    <div class="fl2">
+
+   <div style="display: flex;">
+     <div class="fl2">
       <div class="card">
         <div class="card-body">
-          <div class="row">
-            <div class="col-2 img row1">
+           <div class="row">
+            <div class="col-2 img">
               <img
                 src="../../assets/driver.png"
                 alt=""
@@ -109,11 +114,12 @@
                   <button
                     type="button"
                     class="btn btn-default btn-secondary mb-2"
+                    [ngStyle]="getSeatStyle(seat)"
                     tooltip="{{
                       'Seat ' +
                         seat.seat +
                         '. ' +
-                        'Status ' +
+                        'Status: ' +
                         seat.status +
                         '. ' +
                         'Booked: ' +
@@ -121,18 +127,13 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
                   >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
+                    <p>{{ seat.seat }}</p>
                   </button>
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
 
           <div class="row">
             <div class="col-12 row3">
@@ -153,9 +154,7 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
+                    [ngStyle]="getSeatStyle(seat)"
                   >
                     <p>
                       {{ seat.seat }}
@@ -165,10 +164,9 @@
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col-12 row4">
-              <div class="top mobileSeatLayout mid-container">
+              <div class="top mobileSeatLayout top2-container">
                 <div class="seats" *ngFor="let seat of mid">
                   <button
                     type="button"
@@ -185,9 +183,7 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
+                    [ngStyle]="getSeatStyle(seat)"
                   >
                     <p>
                       {{ seat.seat }}
@@ -197,19 +193,19 @@
               </div>
             </div>
           </div>
-
           <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 row5">
-              <div class="top mobileSeatLayout bottomleft-container">
+            <div class="col-2 img row5">
+              <div class="top mobileSeatLayout top-container">
                 <div class="seats" *ngFor="let seat of bottomleft">
                   <button
                     type="button"
                     class="btn btn-default btn-secondary mb-2"
+                    [ngStyle]="getSeatStyle(seat)"
                     tooltip="{{
                       'Seat ' +
                         seat.seat +
                         '. ' +
-                        'Status ' +
+                        'Status: ' +
                         seat.status +
                         '. ' +
                         'Booked: ' +
@@ -217,28 +213,24 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
                   >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
+                    <p>{{ seat.seat }}</p>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-8 row6">
-              <div class="top mobileSeatLayout bottom-container">
+            <div class="col-10 row1 row6">
+              <div class="top mobileSeatLayout top-container">
                 <div class="seats" *ngFor="let seat of bottom">
                   <button
                     type="button"
                     class="btn btn-default btn-secondary mb-2"
+                    [ngStyle]="getSeatStyle(seat)"
                     tooltip="{{
                       'Seat ' +
                         seat.seat +
                         '. ' +
-                        'Status ' +
+                        'Status: ' +
                         seat.status +
                         '. ' +
                         'Booked: ' +
@@ -246,31 +238,26 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
                   >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
+                    <p>{{ seat.seat }}</p>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="row">
-            <div class="col-4 row7">
-              <div class="top mobileSeatLayout bottom2left-container">
+            <div class="col-2 img row7">
+              <div class="top mobileSeatLayout top-container">
                 <div class="seats" *ngFor="let seat of bottom2left">
                   <button
                     type="button"
                     class="btn btn-default btn-secondary mb-2"
+                    [ngStyle]="getSeatStyle(seat)"
                     tooltip="{{
                       'Seat ' +
                         seat.seat +
                         '. ' +
-                        'Status ' +
+                        'Status: ' +
                         seat.status +
                         '. ' +
                         'Booked: ' +
@@ -278,32 +265,24 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
                   >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
+                    <p>{{ seat.seat }}</p>
                   </button>
                 </div>
               </div>
-              <p class="door">
-                Door: <br />
-                {{ door }}
-              </p>
             </div>
-            <div class="col-8 row8">
-              <div class="top mobileSeatLayout bottom2-container">
-                <div class="seats" *ngFor="let seat of bottom2">
+            <div class="col-10 row8">
+              <div class="top mobileSeatLayout top-container">
+                <div class="seats" *ngFor="let seat of bottom">
                   <button
                     type="button"
                     class="btn btn-default btn-secondary mb-2"
+                    [ngStyle]="getSeatStyle(seat)"
                     tooltip="{{
                       'Seat ' +
                         seat.seat +
                         '. ' +
-                        'Status ' +
+                        'Status: ' +
                         seat.status +
                         '. ' +
                         'Booked: ' +
@@ -311,22 +290,18 @@
                         '. '
                     }}"
                     placement="top"
-                    [ngStyle]="{
-                      'border-color': seat.status === 'empty' ? 'green' : 'red'
-                    }"
                   >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
+                    <p>{{ seat.seat }}</p>
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
-    <div class="fl1">
+      <div class="fl1">
       <div class="card">
         <div class="card-body left">
           <p>Speed: 80KM/HR</p>
@@ -334,7 +309,6 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+   </div>
   </div>
 </div>
