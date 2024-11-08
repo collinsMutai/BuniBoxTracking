@@ -25,290 +25,300 @@
       </button>
     </div>
 
-    <div class="status">
-      <p>
-        <svg
-          style="color: green"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          />
-        </svg>
-        Empty
-      </p>
-      <p>
-        <svg
-          style="color: red"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          />
-        </svg>
-        Occupied
-      </p>
-      <p>
-        <svg
-          style="color: #ff8c32"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          />
-        </svg>
-        Booked
-      </p>
-      <p>
-        <svg
-          style="color: #45474b"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
-          />
-        </svg>
-        Not Booked
-      </p>
-    </div>
-
-   <div style="display: flex;">
-     <div class="fl2">
-      <div class="card">
-        <div class="card-body">
-           <div class="row">
-            <div class="col-2 img">
-              <img
-                src="../../assets/driver.png"
-                alt=""
-                style="height: 60px; width: 60px"
+    <div style="display: flex">
+      <div class="fl2">
+        <div class="status">
+          <p>
+            <svg
+              style="color: green"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
               />
-            </div>
-            <div class="col-10 row2">
-              <div class="top mobileSeatLayout top-container">
-                <div class="seats" *ngFor="let seat of top">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    [ngStyle]="getSeatStyle(seat)"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status: ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                  >
-                    <p>{{ seat.seat }}</p>
-                  </button>
+            </svg>
+            Empty
+          </p>
+          <p>
+            <svg
+              style="color: red"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+              />
+            </svg>
+            Occupied
+          </p>
+          <p>
+            <svg
+              style="color: #ff8c32"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+              />
+            </svg>
+            Booked
+          </p>
+          <p>
+            <svg
+              style="color: #45474b"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-circle"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"
+              />
+            </svg>
+            Not Booked
+          </p>
+        </div>
+       <div style="" class="main-div">
+         <div class="card ">
+          <div class="card-body card-seat">
+            <div class="row">
+              <div class="col-2 img">
+                <img
+                  src="../../assets/driver.png"
+                  alt=""
+                  style="height: 40px; width: 40px"
+                />
+              </div>
+              <div class="col-10 row2">
+                <div class="top mobileSeatLayout top-container">
+                  <div class="seats" *ngFor="let seat of top">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      [ngStyle]="getSeatStyle(seat)"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status: ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                    >
+                      <p>{{ seat.seat }}</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div> 
 
-          <div class="row">
-            <div class="col-12 row3">
-              <div class="top mobileSeatLayout top2-container">
-                <div class="seats" *ngFor="let seat of top2">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                    [ngStyle]="getSeatStyle(seat)"
-                  >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
-                  </button>
+            <div class="row">
+              <div class="col-12 row3">
+                <div class="top mobileSeatLayout top2-container">
+                  <div class="seats" *ngFor="let seat of top2">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                      [ngStyle]="getSeatStyle(seat)"
+                    >
+                      <p>
+                        {{ seat.seat }}
+                      </p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-12 row4">
-              <div class="top mobileSeatLayout top2-container">
-                <div class="seats" *ngFor="let seat of mid">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                    [ngStyle]="getSeatStyle(seat)"
-                  >
-                    <p>
-                      {{ seat.seat }}
-                    </p>
-                  </button>
+            <div class="row">
+              <div class="col-12 row4">
+                <div class="top mobileSeatLayout top2-container">
+                  <div class="seats" *ngFor="let seat of mid">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                      [ngStyle]="getSeatStyle(seat)"
+                    >
+                      <p>
+                        {{ seat.seat }}
+                      </p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-2 img row5">
-              <div class="top mobileSeatLayout top-container">
-                <div class="seats" *ngFor="let seat of bottomleft">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    [ngStyle]="getSeatStyle(seat)"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status: ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                  >
-                    <p>{{ seat.seat }}</p>
-                  </button>
+            <div class="row">
+              <div class="col-2 img row5">
+                <div class="top mobileSeatLayout top-container">
+                  <div class="seats" *ngFor="let seat of bottomleft">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      [ngStyle]="getSeatStyle(seat)"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status: ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                    >
+                      <p>{{ seat.seat }}</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-10 row1 row6">
+                <div class="top mobileSeatLayout top-container">
+                  <div class="seats" *ngFor="let seat of bottom">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      [ngStyle]="getSeatStyle(seat)"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status: ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                    >
+                      <p>{{ seat.seat }}</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-10 row1 row6">
-              <div class="top mobileSeatLayout top-container">
-                <div class="seats" *ngFor="let seat of bottom">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    [ngStyle]="getSeatStyle(seat)"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status: ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                  >
-                    <p>{{ seat.seat }}</p>
-                  </button>
+            <div class="row">
+              <div class="col-2 img row7">
+                <div class="top mobileSeatLayout top-container">
+                  <div class="seats" *ngFor="let seat of bottom2left">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      [ngStyle]="getSeatStyle(seat)"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status: ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                    >
+                      <p>{{ seat.seat }}</p>
+                    </button>
+                  </div>
                 </div>
+                <p class="door">
+                Door: <br />
+                {{ door }}
+              </p>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-2 img row7">
-              <div class="top mobileSeatLayout top-container">
-                <div class="seats" *ngFor="let seat of bottom2left">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    [ngStyle]="getSeatStyle(seat)"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status: ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                  >
-                    <p>{{ seat.seat }}</p>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-10 row8">
-              <div class="top mobileSeatLayout top-container">
-                <div class="seats" *ngFor="let seat of bottom">
-                  <button
-                    type="button"
-                    class="btn btn-default btn-secondary mb-2"
-                    [ngStyle]="getSeatStyle(seat)"
-                    tooltip="{{
-                      'Seat ' +
-                        seat.seat +
-                        '. ' +
-                        'Status: ' +
-                        seat.status +
-                        '. ' +
-                        'Booked: ' +
-                        seat.booked +
-                        '. '
-                    }}"
-                    placement="top"
-                  >
-                    <p>{{ seat.seat }}</p>
-                  </button>
+              <div class="col-10 row8">
+                <div class="top mobileSeatLayout top-container">
+                  <div class="seats" *ngFor="let seat of bottom">
+                    <button
+                      type="button"
+                      class="btn btn-default btn-secondary mb-2"
+                      [ngStyle]="getSeatStyle(seat)"
+                      tooltip="{{
+                        'Seat ' +
+                          seat.seat +
+                          '. ' +
+                          'Status: ' +
+                          seat.status +
+                          '. ' +
+                          'Booked: ' +
+                          seat.booked +
+                          '. '
+                      }}"
+                      placement="top"
+                    >
+                      <p>{{ seat.seat }}</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-      </div>
-    </div>
-      <div class="fl1">
-      <div class="card">
-        <div class="card-body left">
-          <p>Speed: 80KM/HR</p>
-          <p><a routerLink="/location">Location</a></p>
+           <div class="card fl1">
+          <div class="card-body left">
+            <p>Speed: 80KM/HR</p>
+            <p><a routerLink="/location">Location</a></p>
+          </div>
         </div>
+       </div>
       </div>
+      <!-- <div class="fl1">
+        <div class="card mt-4">
+          <div class="card-body left">
+            <p>Speed: 80KM/HR</p>
+            <p><a routerLink="/location">Location</a></p>
+          </div>
+        </div>
+      </div> -->
     </div>
-   </div>
   </div>
 </div>
