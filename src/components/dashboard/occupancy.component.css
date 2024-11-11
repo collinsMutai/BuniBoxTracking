@@ -218,7 +218,7 @@
     width: 100%;
   }
   .card-seat {
-    height: 900px !important;
+    height: 770px !important;
     width: auto !important;
   }
   .door {
@@ -228,7 +228,7 @@
   }
   .fl1 {
     position: absolute;
-    top: 1050px;
+    top: 900px;
   }
 
   .row {
@@ -244,18 +244,18 @@
   .row2 {
     position: absolute;
     right: 0 !important;
-    top: 120px;
+    top: 140px;
   }
 
   .row3 {
     position: absolute;
     right: 80px !important;
-    top: 60px;
+    top: 100px;
   }
   .row4 {
     position: absolute;
     right: 160px;
-    top: 755px;
+    top: 645px;
   }
   .row5 {
     position: absolute;

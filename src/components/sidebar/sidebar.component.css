@@ -151,3 +151,13 @@
 .avatar svg {
   margin-right: 10px;
 }
+
+
+@media (max-width: 768px) {
+  .main-container{
+    padding-top: 0px;
+  }
+  .sidebar{
+    top: 0;
+  }
+}
